@@ -1,0 +1,57 @@
+include ./templates/head.jade
+  <div id="control_tabs">
+    <input name="tab_contr" id="tab_datawork" value="datawork" type="radio"  checked="checked" />
+    <input name="tab_contr" id="tab_datawork1" value="datawork1" type="radio"/>
+
+    <label class='tab_contr selected' value='datawork' for='tab_datawork' >Работа с данными</label>
+    <label class='tab_contr ' value='webmoney' for='tab_datawork1' >WebMoney</label>
+  </div>
+
+  <div id="content_tabs">
+		<div class="tab selected" for='sms'>
+			<h1>Премиум-аккаунт для комфортного и быстрого скачивания</h1>	
+			<p class='descr'>Чтобы оплатить премиум-доступ с помощью sms выполните следующие шаги:</p>	
+			
+			<div class="rowform">
+				<span class="numrow">1</span>
+				<span>Выберите тариф:</span>
+				<span id="rb_duration_sms" class="rb_duration"> 
+					<input type="radio" id="rb_sms_day" name="rb_duration_sms" value="day" checked> 
+					<label for="rb_sms_day" onclick="" ><span></span>На 1 день</label> 
+					<input type="radio" id="rb_sms_week" name="rb_duration_sms" value="week"> 
+					<label for="rb_sms_week" onclick="" ><span></span>На неделю</label>  
+					<input type="radio" id="rb_sms_month" name="rb_duration_sms" value="month"> 
+					<label for="rb_sms_month" onclick="" ><span></span>На месяц</label>  
+					<input type="radio" id="rb_sms_year" name="rb_duration_sms" value="year"> 
+					<label for="rb_sms_year" onclick="" ><span></span>На год</label>  
+					<input type="radio" id="rb_sms_tyear" name="rb_duration_sms" value="tyear"> 
+					<label for="rb_sms_tyear" onclick="" ><span></span>На 2 года</label>  
+				</span>			
+			</div>
+			
+			<div class="rowform">
+				<span class="numrow">2</span>	
+				<span>Отправьте СМС с текстом <span class='colornumber' id='text_sms'>?</span> на номер <span class='colornumber' id='number_sms'>?</span></span>		
+			</div>
+			
+			<div class="rowform">
+				<span class="numrow">3</span>	
+				<input type="text" class="code" maxlength="9" minlength="9" size="9" value="">
+				<span>Введите код, полученный в ответном СМС.</span>		
+			</div>
+			
+			<div class="rowform">
+				<button class="but_download confirm" name='confirm'  id="download_sms"> Скачать </button>
+			</div>				
+		</div> <!-- .tab -->
+  
+div(class='tabs')
+  div(class='tab_head', id='data_work')
+    span(class='tab_inset') Работа с данными
+  
+  div(class='tab_content', id='data_work')
+    button(id='show') Показать
+    button(id='showexcel') Вывести в Excel
+    button(id='delete') Удалить
+      
+include ./templates/footer.jade
